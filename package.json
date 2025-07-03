@@ -1,0 +1,44 @@
+{
+  "name": "cypress_training",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "smoke-test": "npx cypress run --env tags='smoke'",
+    "negative-test": "npx cypress run --env tags='negative'",
+    "regression-test": "npx cypress run --env tags='negative'",
+    "test-critical": "npx cypress run -- env tags='critical'",
+    "test-auth": "npx cypress run --env tags='auth'",
+    "test:smoke-critical": "npx cypress run -e TAGS='@smoke and @critical'",
+    "test-login": "npx cypress run",
+    "--------------": "------------Report Commands -----------------------",
+    "cucumber-report": "node cucumber-html-report.js",
+    "delete-reportFolder": "rm -rf ./reports",
+    "delete-existingJSON-report": "rm -rf ./cypress/cucumber-json",
+    "__________": " ------ Run Test with Report ___________",
+    "smoketest-withreport": "npm run delete-reportFolder;npm run test:smoke-critical; npm run cucumber-report;npm run delete-existingJSON-report",
+    "test-with-report": "npm run delete-reportFolder;npx cypress run; npm run cucumber-report"
+  },
+  "author": "Anshita Bhasin", 
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^14.4.0",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "step_definitions": "cypress/e2e/step-definition/*",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  },
+  "dependencies": {
+    "cypress-cucumber-attach-screenshots-to-failed-steps": "^1.0.0",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "multiple-cucumber-html-reporter": "^3.9.2"
+  }
+}
