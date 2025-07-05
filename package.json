@@ -11,6 +11,9 @@
     "test-critical": "npx cypress run -- env tags='critical'",
     "test-auth": "npx cypress run --env tags='auth'",
     "test:smoke-critical": "npx cypress run -e TAGS='@smoke and @critical'",
+    "test:smoke-critical:chrome-browser": "npx cypress run -e TAGS='@smoke and @critical' --browser chrome",
+
+
     "test-login": "npx cypress run",
     "--------------": "------------Report Commands -----------------------",
     "cucumber-report": "node cucumber-html-report.js",

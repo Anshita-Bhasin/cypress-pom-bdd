@@ -10,5 +10,4 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          command: npm run smoketest-withreport
-          browser: chrome
+          command: npm run test:smoke-critical:chrome-browser
