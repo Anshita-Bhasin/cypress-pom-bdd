@@ -2,7 +2,7 @@ name: End-to-end tests
 on: push
 jobs:
   Cypress-e2e-test:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-24.04 
     steps:
       - name: Checkout The Code
         uses: actions/checkout@v4
