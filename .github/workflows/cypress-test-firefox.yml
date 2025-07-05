@@ -1,4 +1,4 @@
-name: Cypress End-to-end test on chrome
+name: Cypress End-to-end test on firefox
 on: push
 jobs:
   Cypress-smoke-test-with-report:
