@@ -1,0 +1,11 @@
+name: End-to-end tests
+on: push
+jobs:
+  Cypress-e2e-test:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout The Code
+        uses: actions/checkout@v4
+     
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
