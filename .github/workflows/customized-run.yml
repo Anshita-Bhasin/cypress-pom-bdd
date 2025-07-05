@@ -1,4 +1,4 @@
-name: Cypress End-to-end test on chrome
+name: Customized Script Cypress test
 on: [workflow_dispatch]
 jobs:
   Cypress-smoke-test-with-report:
