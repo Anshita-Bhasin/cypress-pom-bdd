@@ -1,38 +1,38 @@
-name: Dependent Tests
+name: Smoke-Regression Tests
 on: push
 jobs:
   Smoke-Test:
-    runs-on: ubuntu-24.04 
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout The Code
         uses: actions/checkout@v4
-     
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
           command: npm run test:smoke-critical:chrome-browser
 
-
   Regression-Test-1:
-    runs-on: ubuntu-24.04 
+    runs-on: ubuntu-24.04
     needs: [Smoke-Test]
     steps:
       - name: Checkout The Code
         uses: actions/checkout@v4
-     
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
           command: npm run regression-test
 
   Regression-Test2:
-    runs-on: ubuntu-24.04 
-    needs: [Smoke-Test,Regression-Test-1]
+    runs-on: ubuntu-24.04
+    if: ${{always}}
+    needs: [Smoke-Test, Regression-Test-1]
     steps:
       - name: Checkout The Code
         uses: actions/checkout@v4
-     
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          command: npm run test:regression:firefox-browser     
+          command: npm run test:regression:firefox-browser
