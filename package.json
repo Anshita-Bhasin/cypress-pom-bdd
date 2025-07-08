@@ -10,7 +10,7 @@
     "regression-test": "npx cypress run --env tags='negative'",
     "test-critical": "npx cypress run -- env tags='critical'",
     "test-auth": "npx cypress run --env tags='auth'",
-    "test:regression": "npx cypress run -e TAGS='@regression'",
+    "test:regression": "npx cypress run -e TAGS='@regression1'",
     "test:smoke-critical": "npx cypress run -e TAGS='@smoke and @critical'",
     "test:smoke-critical:chrome-browser": "npx cypress run -e TAGS='@smoke and @critical' --browser chrome",
     "test:smoke-critical:firefox-browser": "npx cypress run -e TAGS='@smoke and @critical' --browser firefox",

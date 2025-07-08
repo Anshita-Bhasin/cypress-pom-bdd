@@ -6,7 +6,7 @@ class loginPage {
         usernameInput: "#user-name",
         passwordInput: "#password",
         loginButton: "#login-button",
-        errorMessage: '[data-test="error"]'
+        errorMessage: '[data-test="error1"]'
     }
 
     openURL() {
