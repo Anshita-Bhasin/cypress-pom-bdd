@@ -14,6 +14,7 @@
     "test:smoke-critical": "npx cypress run -e TAGS='@smoke and @critical'",
     "test:smoke-critical:chrome-browser": "npx cypress run -e TAGS='@smoke and @critical' --browser chrome",
     "test:smoke-critical:firefox-browser": "npx cypress run -e TAGS='@smoke and @critical' --browser firefox",
+    "test:regression:firefox-browser": "npx cypress run -e TAGS='@regression' --browser firefox",
 
 
     "test-login": "npx cypress run",
