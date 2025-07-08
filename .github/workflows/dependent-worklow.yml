@@ -1,0 +1,26 @@
+name: Dependent Tests
+on: push
+jobs:
+  Smoke-Test:
+    runs-on: ubuntu-24.04 
+    steps:
+      - name: Checkout The Code
+        uses: actions/checkout@v4
+     
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          command: npm run test:smoke-critical:chrome-browser
+
+
+  Regression-Test:
+    runs-on: ubuntu-24.04 
+    needs: [Smoke-Test]
+    steps:
+      - name: Checkout The Code
+        uses: actions/checkout@v4
+     
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          command: npm run test:regression
