@@ -1,0 +1,17 @@
+name: Multi OS Script - Cypress test
+on: push
+jobs:
+  Cypress-smoke-test-with-report:
+    strategy:
+     matrix:
+       os: [ubuntu-latest,windows-latest,macos-latest]
+     fail-fast: true
+    runs-on: ${{matrix.os}}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+     
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          command: npm run test:smoke-critical:chrome-browser
