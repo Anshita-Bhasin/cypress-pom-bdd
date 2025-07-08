@@ -22,7 +22,13 @@
     "delete-existingJSON-report": "rm -rf ./cypress/cucumber-json",
     "__________": " ------ Run Test with Report ___________",
     "smoketest-withreport": "npm run delete-reportFolder;npm run test:smoke-critical; npm run cucumber-report;npm run delete-existingJSON-report",
+  
     "test-with-report": "npm run delete-reportFolder;npx cypress run; npm run cucumber-report"
+
+
+
+
+
   },
   "author": "Anshita Bhasin", 
   "license": "ISC",

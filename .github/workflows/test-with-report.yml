@@ -1,0 +1,25 @@
+name: 2 Test in parallel
+on: push
+jobs:
+  Smoke-test-with-report:
+    runs-on: ubuntu-24.04 
+    steps:
+      - name: Checkout The Code
+        uses: actions/checkout@v4
+     
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          command: npm run test:smoke-critical:chrome-browser
+
+
+  Regression-test-with-report:
+    runs-on: ubuntu-24.04 
+    steps:
+      - name: Checkout The Code
+        uses: actions/checkout@v4
+     
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          command: npm run regression-test 
