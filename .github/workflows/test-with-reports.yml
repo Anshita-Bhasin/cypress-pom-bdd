@@ -19,5 +19,14 @@ jobs:
           name: Cypress-Test-report
           path: cypress/reports/*
 
+      - name: Upload Cucumber HTML Test report 
+        uses: actions/upload-artifact@v4
+        with:
+          name: Cypress-Cucumber-HTML-report
+          path: reports/cucumber-htmlreport.html/*
+
+
+
+
 
 
