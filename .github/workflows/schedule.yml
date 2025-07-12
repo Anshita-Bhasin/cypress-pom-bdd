@@ -1,4 +1,4 @@
-name: Customized Script Cypress test
+name: Scheduled Regression Test
 on: 
   schedule:
     - cron: 30 3 * * *
