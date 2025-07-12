@@ -1,0 +1,28 @@
+name: QA Automation Test
+on: push
+jobs:
+  Cypress-test-with-report:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout The Code
+        uses: actions/checkout@v4
+        with:
+          repository: Anshita-Bhasin/cypress-k6-automation
+
+      - name: Cypress Test
+        uses: cypress-io/github-action@v6
+        with:
+          command: npm run chrome-smoketest-withreport 
+
+
+      - name: Upload Cypress Test report 
+        uses: actions/upload-artifact@v4
+        with:
+          name: Cypress-Test-report
+          path: cypress/reports/*
+
+
+
+
+
+
