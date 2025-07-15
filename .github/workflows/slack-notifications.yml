@@ -30,7 +30,24 @@ jobs:
           message: Here is the link to Test Report - https://github.com/Anshita-Bhasin/cypress-pom-bdd/actions/runs/${{github.run_id}}
 
         
-      
+      - name: Email Testing Reports 
+        uses: dawidd6/action-send-mail@v6
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: '${{secrets.MAIL_USERNAME}}'
+          password: '${{secrets.MAIL_PASSWORD}}'
+          subject: Regression TestReport
+          to: ${{secrets.MAIL_RECIPIENTS}}
+          from: QA Team
+          body: 'Here is the link to Test Report - https://github.com/Anshita-Bhasin/cypress-pom-bdd/actions/runs/${{github.run_id}}'
+
+
+
+
+
+
+
 
 
 
