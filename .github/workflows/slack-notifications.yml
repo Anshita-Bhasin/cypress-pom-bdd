@@ -1,4 +1,4 @@
-name: Slack Notifications - Test
+name: Slack + Email Notifications
 on: push
 jobs:
   Cypress-test-with-report:
