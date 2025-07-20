@@ -1,5 +1,19 @@
 {
-  "name": "Using fixtures to represent data",
-  "email": "hello@cypress.io",
-  "body": "Fixtures are a great way to mock data for responses to routes"
+  "variants": [
+    {
+      "model": "iPhone 16",
+      "price": 2849,
+      "storage": "128GB"
+    },
+    {
+      "model": "iPhone 16 Pro",
+      "price": 3999,
+      "storage": "256GB"\"
+    },
+    {
+      "model": "iPhone 16 Pro Max",
+      "price": 4399,
+      "storage": "512GB"
+    }
+  ]
 }
