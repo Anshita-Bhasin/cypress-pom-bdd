@@ -11,7 +11,7 @@ pipeline {
              stage('Test') {
             steps {
                 echo '*******Test Step - Cypress Test *******'
-                sh 'npm run test:regression:firefox-browser'
+                sh 'npm run test:smoke-critical'
             } }
              stage('Deploy') {
             steps {
