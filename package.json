@@ -4,22 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "smoke-test": "npx cypress run --env tags='smoke'",
     "negative-test": "npx cypress run --env tags='negative'",
     "regression-test": "npx cypress run --env tags='negative'",
     "test-critical": "npx cypress run -- env tags='critical'",
     "test-auth": "npx cypress run --env tags='auth'",
     "cy:run:sanity": "npx cypress run --env ENV=jenkins --e2e --spec=cypress/e2e/features/Sanity",
-
     "test:regression": "npx cypress run -e TAGS='@regression1'",
     "test:smoke-critical": "npx cypress run -e TAGS='@smoke and @critical'",
     "test:smoke-critical:chrome-browser": "npx cypress run -e TAGS='@smoke and @critical' --browser chrome",
     "test:smoke-critical:firefox-browser": "npx cypress run -e TAGS='@smoke and @critical' --browser firefox",
     "test:regression:firefox-browser": "npx cypress run -e TAGS='@regression' --browser firefox",
     "test-with-tags":"npx cypress run --env TAGS=$TAGS",
-
-
     "test-login": "npx cypress run",
     "--------------": "------------Report Commands -----------------------",
     "cucumber-report": "node cucumber-html-report.js",

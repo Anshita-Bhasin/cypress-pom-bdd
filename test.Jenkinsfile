@@ -32,7 +32,7 @@ pipeline {
                 // sh 'npm run ${params.Scripts}'
                 //  sh "npx cypress run --env TAGS=${params.Tag}"
                 //  sh "npm run test-with-report"
-                 sh "TAGS=${params.Tag} npm run test-with-report"
+                 sh "TAGS=${params.Tag} npm run param-test-with-report"
 
 
 
