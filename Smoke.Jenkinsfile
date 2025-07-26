@@ -1,6 +1,18 @@
 pipeline {
     agent any
         tools {nodejs "Node"}
+
+
+
+        parameters{
+
+            choice(
+            name:'Scripts', 
+            choices:['smoketest-withreport', 'test-with-report'],
+            description:'Choose Script to run'
+            
+            )
+        }
     stages {
         stage('Build - Install Dependencies') {
             steps {
@@ -11,7 +23,7 @@ pipeline {
              stage('Test') {
             steps {
                 echo '*******Test Step - Cypress Test *******'
-                sh 'npm run smoketest-withreport'
+                sh 'npm run ${params.Scripts}'
             } }
              stage('Publish Report') {
                 steps {
