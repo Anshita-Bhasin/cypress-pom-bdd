@@ -8,6 +8,8 @@ module.exports = defineConfig({
   e2e: {
     baseUrl: "https://www.saucedemo.com/v1/",
     specPattern: 'cypress/e2e/features/**/*.feature',
+    specPattern: `cypress/e2e/**/*${tag}*.cy.js`,
+
 
     setupNodeEvents(on, config) {
       require('cypress-mochawesome-reporter/plugin')(on);
@@ -24,7 +26,7 @@ module.exports = defineConfig({
 
     },
   },
-  // env: {
-  //   TAGS: '@smoke'
-  // }
+  env: {
+    TAGS: '@smoke'
+  }
 });

@@ -10,11 +10,14 @@
     "regression-test": "npx cypress run --env tags='negative'",
     "test-critical": "npx cypress run -- env tags='critical'",
     "test-auth": "npx cypress run --env tags='auth'",
+    "cy:run:sanity": "npx cypress run --env ENV=jenkins --e2e --spec=cypress/e2e/features/Sanity",
+
     "test:regression": "npx cypress run -e TAGS='@regression1'",
     "test:smoke-critical": "npx cypress run -e TAGS='@smoke and @critical'",
     "test:smoke-critical:chrome-browser": "npx cypress run -e TAGS='@smoke and @critical' --browser chrome",
     "test:smoke-critical:firefox-browser": "npx cypress run -e TAGS='@smoke and @critical' --browser firefox",
     "test:regression:firefox-browser": "npx cypress run -e TAGS='@regression' --browser firefox",
+    "test-with-tags":"npx cypress run --env TAGS=$TAGS",
 
 
     "test-login": "npx cypress run",
@@ -24,7 +27,8 @@
     "delete-existingJSON-report": "rm -rf ./cypress/cucumber-json",
     "__________": " ------ Run Test with Report ___________",
     "smoketest-withreport": "npm run delete-reportFolder;npm run test:smoke-critical; npm run cucumber-report;npm run delete-existingJSON-report",
-    "test-with-report": "npm run delete-reportFolder;npx cypress run; npm run cucumber-report"
+    "test-with-report": "npm run delete-reportFolder;npx cypress run; npm run cucumber-report",
+    "param-test-with-report": "npm run delete-reportFolder;npm run test-with-tags;npm run cucumber-report;npm run delete-existingJSON-report"
 
 
 
