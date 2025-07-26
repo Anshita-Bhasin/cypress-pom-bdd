@@ -39,9 +39,11 @@ pipeline {
             }
         }
         
-        stage('Publish Report') {
-            steps {
-                publishHTML([
+    }
+
+    post{
+            always {
+         publishHTML([
                     allowMissing: false, 
                     alwaysLinkToLastBuild: false, 
                     icon: '', 
@@ -50,12 +52,7 @@ pipeline {
                     reportFiles: 'index.html', 
                     reportName: 'Cypress HTML Report'
                 ])
-            }
-        }
-
-        stage('Cucumber HTML Report') {
-            steps {
-                publishHTML([
+         publishHTML([
                     allowMissing: false, 
                     alwaysLinkToLastBuild: false, 
                     icon: '', 
@@ -64,7 +61,11 @@ pipeline {
                     reportFiles: 'index.html', 
                     reportName: 'Cucumber HTML Report'
                 ])
-            }
-        }
+
+                    slackSend( channel: "jenkins", token: "ImfTzosTwVC7iGxlxlFNspme", color: "good", message: "Regression Test Report - http://localhost:8080/job/cypress-26july-pipelineproject/Cucumber_20HTML_20Report/")
+    }
+
+
+
     }
 }
