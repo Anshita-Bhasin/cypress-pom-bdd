@@ -60,7 +60,7 @@ pipeline {
                     alwaysLinkToLastBuild: false, 
                     icon: '', 
                     keepAll: false, 
-                    reportDir: 'cypress/reports/cucumber-htmlreporter/', 
+                    reportDir: 'cypress/reports/cucumber-htmlreport/', 
                     reportFiles: 'index.html', 
                     reportName: 'Cucumber HTML Report'
                 ])
